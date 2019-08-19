@@ -28,7 +28,7 @@ public class ChatServerHandler extends SimpleChannelInboundHandler<String> {
         Channel incoming = ctx.channel();
         
         for (Channel channel : channels) {
-            channel.writeAndFlush("[SERVER] - " + incoming.remoteAddress() + "has left\r\n");
+            channel.writeAndFlush("[SERVER] - " + incoming.remoteAddress() + " has left\r\n");
         }
         channels.remove(incoming);
     }
